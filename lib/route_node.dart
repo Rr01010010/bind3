@@ -67,8 +67,7 @@ class RouteNode {
         : "${parentPath ?? ""}/$name";
   }
 
-  CustomRoute get route =>
-      CustomRoute(
+  CustomRoute get route => CustomRoute(
         transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         durationInMilliseconds: 400,
         initial: initial,

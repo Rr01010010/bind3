@@ -3,7 +3,7 @@ library bind3;
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:auto_route/auto_route.dart' as _i1;
+import 'package:auto_route/auto_route.dart' as i1;
 
 part 'app_router_base.dart';
 part 'route_core.dart';

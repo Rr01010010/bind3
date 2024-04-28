@@ -9,7 +9,7 @@ class RouteCore extends RouteCoreBase {
       RepositoriesContainerBase repositoryContainer, AppRouterBase appRouter) {
     AppRouterBase.singleton = appRouter;
 
-    if(!get.initialized) {
+    if (!get.initialized) {
       get._load(repositoryContainer, appRouter);
     }
     return get;
@@ -17,12 +17,12 @@ class RouteCore extends RouteCoreBase {
 }
 
 abstract class RouteCoreBase {
-
   bool initialized = false;
   RepositoriesContainerBase container = EmptyRepositoriesContainer();
   late RouteNode tree;
 
-  Future<void> _load(RepositoriesContainerBase container, AppRouterBase appRouter) async {
+  Future<void> _load(
+      RepositoriesContainerBase container, AppRouterBase appRouter) async {
     this.container = container;
 
     var loading = this.container.initialize();
