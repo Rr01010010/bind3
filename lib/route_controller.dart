@@ -1,13 +1,14 @@
 part of 'bind3.dart';
 
-abstract class RouteController {
+mixin RouteController {
   final RouteCore core = RouteCore.get;
 
   static T get<T extends RouteController>([bool forcePush = false]) {
     var path = paths.containsKey(T) ? paths[T]!() : null;
     var service = RouteCore.get.tree.getService<T>(path);
-    if (service == null)
+    if (service == null) {
       throw Exception("RouteController.get<$T>(path: $path) not found service");
+    }
     return service;
   }
 

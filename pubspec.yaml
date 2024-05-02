@@ -1,6 +1,6 @@
 name: bind3
 description: "A library that allows you to bind routes to page controllers"
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/Rr01010010/bind3
 repository: https://github.com/Rr01010010/bind3
 
