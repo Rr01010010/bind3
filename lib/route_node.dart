@@ -67,9 +67,43 @@ class RouteNode {
         : "${parentPath ?? ""}/$name";
   }
 
-  CustomRoute get route => CustomRoute(
-        transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
-        durationInMilliseconds: 400,
+  AutoRoute get route => AutoRoute(
+        initial: initial,
+        page: page,
+        path: name,
+        children: children?.map((info) => info.route).toList(),
+      );
+}
+
+class RouteNodeCupertino extends RouteNode {
+  RouteNodeCupertino({
+    super.initial = false,
+    required super.page,
+    super.routeController,
+    required super.name,
+    super.children,
+  });
+
+  @override
+  AutoRoute get route => CupertinoRoute(
+        initial: initial,
+        page: page,
+        path: name,
+        children: children?.map((info) => info.route).toList(),
+      );
+}
+
+class RouteNodeMaterial extends RouteNode {
+  RouteNodeMaterial({
+    super.initial = false,
+    required super.page,
+    super.routeController,
+    required super.name,
+    super.children,
+  });
+
+  @override
+  AutoRoute get route => MaterialRoute(
         initial: initial,
         page: page,
         path: name,
