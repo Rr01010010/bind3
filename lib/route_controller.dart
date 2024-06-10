@@ -24,7 +24,16 @@ mixin RouteController {
   }
 
   ///for navigation with controller
-  StackRouter? router;
+  StackRouter? _router;
+
+  ///for navigation with controller
+  StackRouter? get router => _router;
+
+  ///for navigation with controller
+  set router(StackRouter? value) {
+    _router = value;
+    core.currentRouter = value;
+  }
   String get name => routeInfo.name; //path.split('/').last;
   String get path => routeInfo.fullPath;
   static final Map<Type, String Function()> paths = {};

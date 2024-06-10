@@ -20,6 +20,7 @@ abstract class RouteCoreBase {
   bool initialized = false;
   RepositoriesContainerBase container = EmptyRepositoriesContainer();
   late RouteNode tree;
+  StackRouter? currentRouter;
 
   Future<void> _load(
       RepositoriesContainerBase container, AppRouterBase appRouter) async {
