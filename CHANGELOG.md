@@ -1,3 +1,6 @@
+## 0.0.6+3
+RepositoriesContainerBase is now a mixin
+
 ## 0.0.6+1
 RouteNode return route get-property with type AutoRoute
 RouteNodeCupertino return route get-property with type CupertinoRoute

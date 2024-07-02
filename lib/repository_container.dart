@@ -1,6 +1,6 @@
 part of 'bind3.dart';
 
-class EmptyRepositoriesContainer extends RepositoriesContainerBase {
+class EmptyRepositoriesContainer with RepositoriesContainerBase {
   @override
   bool get loading {
     throw Exception(
@@ -11,7 +11,7 @@ class EmptyRepositoriesContainer extends RepositoriesContainerBase {
   Future<void> initialize() async {}
 }
 
-abstract class RepositoriesContainerBase {
+mixin RepositoriesContainerBase {
   bool get loading;
   Future<void> initialize();
 }
