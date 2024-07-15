@@ -1,5 +1,6 @@
-## 0.0.6+3
+## 0.0.7
 RepositoriesContainerBase is now a mixin
+Additional methods for route navigation
 
 ## 0.0.6+1
 RouteNode return route get-property with type AutoRoute

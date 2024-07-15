@@ -6,9 +6,9 @@ abstract class BindStateController<T extends StatefulWidget,
 
   @override
   void initState() {
+    super.initState();
     routeController.router = AutoRouter.of(context);
     routeController.initController();
-    super.initState();
   }
 
   @override
