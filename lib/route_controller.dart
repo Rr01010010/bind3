@@ -34,6 +34,8 @@ mixin RouteController {
     _router = value;
     core.currentRouter = value;
   }
+
+  String get controllerTag => path.replaceFirst("/", "").replaceAll("/", "_"); //path.split('/').last;
   String get name => routeInfo.name; //path.split('/').last;
   String get path => routeInfo.fullPath;
   static final Map<Type, String Function()> paths = {};

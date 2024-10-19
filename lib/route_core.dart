@@ -25,11 +25,10 @@ abstract class RouteCoreBase {
   Future<void> _load(
       RepositoriesContainerBase container, AppRouterBase appRouter) async {
     this.container = container;
-
-    var loading = this.container.initialize();
+    initialized = false;
     tree = appRouter.infoRoute;
-    await loading;
 
+    await this.container.initialize();
     initialized = true;
   }
 }
