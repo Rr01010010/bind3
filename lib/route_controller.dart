@@ -34,36 +34,38 @@ mixin RouteController {
     _router = value;
     core.currentRouter = value;
   }
-  String get name => routeInfo.name; //path.split('/').last;
+
+  String get controllerTag => path.replaceFirst("/", "").replaceAll("/", "_");
+  String get name => routeInfo.name;
   String get path => routeInfo.fullPath;
   static final Map<Type, String Function()> paths = {};
 
   navigateRoute([StackRouter? sRouter, bool useName = false]) =>
-      (sRouter ?? router)?.navigateNamed(useName ? name : path);
+      (sRouter ?? router)?.navigatePath(useName ? name : path);
 
   pushRoute([StackRouter? sRouter, bool useName = false]) =>
-      (sRouter ?? router)?.pushNamed(
+      (sRouter ?? router)?.pushPath(
           useName ? name : (path.startsWith('/') ? path.substring(1) : path));
 
   replaceRoute([StackRouter? sRouter, bool useName = false]) =>
-      (sRouter ?? router)?.replaceNamed(
+      (sRouter ?? router)?.replacePath(
           useName ? name : (path.startsWith('/') ? path.substring(1) : path));
 
   navigateTo<T extends RouteController>({bool useName = false, RouteController? rc}) {
     rc ??= RouteController.get<T>();
-    router?.navigateNamed(useName ? rc.name : rc.path);
+    router?.navigatePath(useName ? rc.name : rc.path);
   }
 
   pushTo<T extends RouteController>({bool useName = false, RouteController? rc}) {
     rc ??= RouteController.get<T>();
-    router?.pushNamed(useName
+    router?.pushPath(useName
         ? rc.name
         : (rc.path.startsWith('/') ? rc.path.substring(1) : rc.path));
   }
 
   replaceTo<T extends RouteController>({bool useName = false, RouteController? rc}) {
     rc ??= RouteController.get<T>();
-    router?.replaceNamed(useName
+    router?.replacePath(useName
         ? rc.name
         : (rc.path.startsWith('/') ? rc.path.substring(1) : rc.path));
   }

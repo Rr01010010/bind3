@@ -2,7 +2,7 @@ part of 'bind3.dart';
 
 class RouteNode {
   final bool initial;
-  final PageInfo<dynamic> page;
+  final PageInfo page;
   final RouteController? routeController;
   final String name;
   RouteNode? parent;

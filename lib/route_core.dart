@@ -26,9 +26,8 @@ abstract class RouteCoreBase {
       RepositoriesContainerBase container, AppRouterBase appRouter) async {
     this.container = container;
 
-    var loading = this.container.initialize();
     tree = appRouter.infoRoute;
-    await loading;
+    await this.container.initialize();
 
     initialized = true;
   }

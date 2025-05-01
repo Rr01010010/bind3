@@ -1,3 +1,11 @@
+## 0.0.8
+auto_route, flutter_lints, build_runner updated
+
+for auto_route:
+- pushNamed replaced to pushPath method
+- replaceNamed replaced to replacePath method
+- navigateNamed replaced to navigatePath method
+
 ## 0.0.7
 RepositoriesContainerBase is now a mixin
 Additional methods for route navigation
