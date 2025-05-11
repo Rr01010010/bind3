@@ -7,7 +7,7 @@ class EmptyRouter extends AppRouterBase {
       "Не реализован AppRouterBase и/или не передан в синглтон");
 }
 
-mixin class AppRouterBase implements RootStackRouter {
+abstract class AppRouterBase extends RootStackRouter {
   static AppRouterBase? _singleton;
   static set singleton(AppRouterBase router) => _singleton ??= router;
   static AppRouterBase get singleton {
